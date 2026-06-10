@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Era Vargas – Estilo Kahoot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ░░ TELA INICIAL ░░ -->
+  <div class="screen active" id="screen-start">
+    <div class="start-box">
+      <div class="logo-flag">🇧🇷</div>
+      <h1 class="logo-title">ERA VARGAS</h1>
+      <p class="logo-sub">Quiz estilo Kahoot · 10 perguntas</p>
+      <div class="medals-row">
+        <span>🥉 0–4 Iniciante</span>
+        <span>🥈 5–7 Conhecedor</span>
+        <span>🥇 8–10 Especialista</span>
+      </div>
+      <div class="name-wrap">
+        <input id="player-name" type="text" maxlength="20" placeholder="Digite seu nome para começar" autocomplete="off"/>
+      </div>
+      <button class="btn-start" id="btn-start">▶ INICIAR</button>
+      <p class="start-hint">⏱️ 15 segundos por pergunta · pontos por velocidade</p>
+    </div>
+  </div>
+
+  <!-- ░░ CONTAGEM REGRESSIVA ░░ -->
+  <div class="screen" id="screen-countdown">
+    <div class="countdown-box">
+      <p class="cd-label">Preparar…</p>
+      <div class="cd-number" id="cd-number">3</div>
+    </div>
+  </div>
+
+  <!-- ░░ PERGUNTA ░░ -->
+  <div class="screen" id="screen-quiz">
+    <div class="quiz-layout">
+
+      <!-- Cabeçalho -->
+      <div class="quiz-header">
+        <div class="q-meta">
+          <span id="q-counter">1/10</span>
+          <span id="q-points-badge" class="points-badge">⚡ Normal</span>
+        </div>
+        <div class="timer-block">
+          <svg class="timer-svg" viewBox="0 0 44 44">
+            <circle class="t-bg" cx="22" cy="22" r="18"/>
+            <circle class="t-fg" id="t-fg" cx="22" cy="22" r="18"/>
+          </svg>
+          <span id="timer-num">15</span>
+        </div>
+        <div class="score-block">⭐ <span id="live-score">0</span></div>
+      </div>
+
+      <!-- Barra de progresso -->
+      <div class="prog-wrap"><div class="prog-bar" id="prog-bar"></div></div>
+
+      <!-- Enunciado -->
+      <div class="question-card" id="question-card">
+        <p id="question-text">Carregando…</p>
+      </div>
+
+      <!-- Botões coloridos estilo Kahoot -->
+      <div class="answers-grid" id="answers-grid"></div>
+
+      <!-- Toast conquista -->
+      <div class="ach-toast" id="ach-toast"></div>
+
+    </div>
+  </div>
+
+  <!-- ░░ FEEDBACK PÓS-RESPOSTA ░░ -->
+  <div class="screen" id="screen-feedback">
+    <div class="feedback-box" id="feedback-box">
+      <div class="fb-icon" id="fb-icon"></div>
+      <div class="fb-title" id="fb-title"></div>
+      <div class="fb-answer" id="fb-answer"></div>
+      <div class="fb-explanation" id="fb-explanation"></div>
+      <div class="fb-points" id="fb-points"></div>
+      <button class="btn-next" id="btn-next">Próxima →</button>
+    </div>
+  </div>
+
+  <!-- ░░ RESULTADO FINAL ░░ -->
+  <div class="screen" id="screen-result">
+    <div class="result-box">
+      <div class="result-emoji" id="result-emoji"></div>
+      <h2 class="result-title" id="result-title"></h2>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-msg" id="result-msg"></div>
+
+      <!-- Pódio -->
+      <div class="podium" id="podium">
+        <div class="podium-col" id="pod-2nd">
+          <div class="pod-name" id="pod-2nd-name">—</div>
+          <div class="pod-bar bar-2nd"><span>🥈</span></div>
+          <div class="pod-pts" id="pod-2nd-pts"></div>
+        </div>
+        <div class="podium-col" id="pod-1st">
+          <div class="pod-name" id="pod-1st-name">—</div>
+          <div class="pod-bar bar-1st"><span>🥇</span></div>
+          <div class="pod-pts" id="pod-1st-pts"></div>
+        </div>
+        <div class="podium-col" id="pod-3rd">
+          <div class="pod-name" id="pod-3rd-name">—</div>
+          <div class="pod-bar bar-3rd"><span>🥉</span></div>
+          <div class="pod-pts" id="pod-3rd-pts"></div>
+        </div>
+      </div>
+
+      <!-- Conquistas -->
+      <div class="ach-list" id="ach-list"></div>
+
+      <!-- Certificado -->
+      <div class="certificate" id="certificate"></div>
+
+      <!-- Gabarito -->
+      <div class="gabarito" id="gabarito"></div>
+
+      <button class="btn-start" id="btn-restart">🔄 Jogar novamente</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
