@@ -432,10 +432,7 @@ function showResult() {
   document.getElementById('result-emoji').textContent = emoji;
   document.getElementById('result-title').textContent = title;
   document.getElementById('result-msg').textContent   = msg;
-  document.getElementById('pod-1st-name').textContent = playerName;
-  document.getElementById('pod-1st-pts').textContent  = totalPts+' pts';
-  document.getElementById('pod-2nd-name').textContent = '—';
-  document.getElementById('pod-3rd-name').textContent = '—';
+
   var achList = document.getElementById('ach-list');
   achList.innerHTML = '';
   if (achievements.length>0) {
